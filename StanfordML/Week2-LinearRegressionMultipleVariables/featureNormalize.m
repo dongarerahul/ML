@@ -26,13 +26,13 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 
-
-
-
-
-
-
-
+mu = mean(X);
+sigma = std(X);
+%fprintf('Size of (X - mu) ')
+% (X - mu) 
+% pause();
+ 
+X_norm = (X - mu) ./ sigma
 
 % ============================================================
 

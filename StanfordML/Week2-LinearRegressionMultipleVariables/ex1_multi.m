@@ -54,7 +54,6 @@ fprintf('Normalizing Features ...\n');
 % Add intercept term to X
 X = [ones(m, 1) X];
 
-
 %% ================ Part 2: Gradient Descent ================
 
 % ====================== YOUR CODE HERE ======================
@@ -80,6 +79,7 @@ X = [ones(m, 1) X];
 %
 
 fprintf('Running gradient descent ...\n');
+pause;
 
 % Choose some alpha value
 alpha = 0.01;
@@ -149,7 +149,7 @@ fprintf('\n');
 
 % Estimate the price of a 1650 sq-ft, 3 br house
 % ====================== YOUR CODE HERE ======================
-price = 0; % You should change this
+price = X(1:1, :) * theta(1,:); % You should change this
 
 
 % ============================================================

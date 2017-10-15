@@ -3,6 +3,9 @@ function [theta, J_history] = gradientDescentMulti(X, y, theta, alpha, num_iters
 %   theta = GRADIENTDESCENTMULTI(x, y, theta, alpha, num_iters) updates theta by
 %   taking num_iters gradient steps with learning rate alpha
 
+%   theta is vector of zeros(3, 1);
+%   X is m x 3 matrix (e.g. 1 initializer + 1 housing location + 1 housing size)
+
 % Initialize some useful values
 m = length(y); % number of training examples
 J_history = zeros(num_iters, 1);
@@ -17,16 +20,10 @@ for iter = 1:num_iters
     %       of the cost function (computeCostMulti) and gradient here.
     %
 
-
-
-
-
-
-
-
-
-
-
+    h = X * theta;          % m x 3
+    error = X' * (h - y);   % multipy X transpose with the diff between hypothesis and actual
+    delta = error * (1/m);      %
+    theta = theta - (alpha * delta);
     % ============================================================
 
     % Save the cost J in every iteration    
