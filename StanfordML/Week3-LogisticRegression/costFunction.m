@@ -20,12 +20,11 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
+h = X * theta;
+squareError = (h - y) .^ 2;
+J = (1/(2*m)) * sum(squareError);
 
-
-
-
-
-
+grad = 
 
 % =============================================================
 

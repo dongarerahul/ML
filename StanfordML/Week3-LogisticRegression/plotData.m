@@ -24,8 +24,8 @@ figure; hold on;
 % X = [Exam 1 Score,  Exam 2 Score]
 plot(X(find(y==1), 1), X(find(y==1), 2), "k+", 'LineWidth', 2, 'MarkerSize', 7);
 plot(X(find(y==0), 1), X(find(y==0), 2), "ko", 'MarkerFaceColor', 'y', 'MarkerSize', 7);
-xlabel('Exam-1 Score');
-ylabel('Exam-2 Score');
+%xlabel('Exam-1 Score');
+%ylabel('Exam-2 Score');
 
 hold off;
 
