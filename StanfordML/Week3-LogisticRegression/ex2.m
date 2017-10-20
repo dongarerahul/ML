@@ -24,7 +24,8 @@ clear ; close all; clc
 %  contains the label.
 
 data = load('ex2data1.txt');
-X = data(:, [1, 2]); y = data(:, 3);
+X = data(:, [1, 2]); 
+y = data(:, 3);
 
 %% ==================== Part 1: Plotting ====================
 %  We start the exercise by first plotting the data to understand the 
@@ -45,9 +46,8 @@ ylabel('Exam 2 score')
 legend('Admitted', 'Not admitted')
 hold off;
 
-fprintf('\nProgram paused. Press enter to continue.\n');
-pause;
-
+% fprintf('\nProgram paused. Press enter to continue.\n');
+% pause;
 
 %% ============ Part 2: Compute Cost and Gradient ============
 %  In this part of the exercise, you will implement the cost and gradient

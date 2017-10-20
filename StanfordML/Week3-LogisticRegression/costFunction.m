@@ -20,12 +20,13 @@ grad = zeros(size(theta));
 % Note: grad should have the same dimensions as theta
 %
 
-h = X * theta;
-squareError = (h - y) .^ 2;
-J = (1/(2*m)) * sum(squareError);
+% m x 3 * 3 x 1 = m x 1
+h = sigmoid(X * theta);
+error = (log(h)' * y) + (log(1-h)' * (1 - y));
+J = (-1/m) * sum(error);
 
-grad = 
-
+grad = (1/m) * (X' * (h-y)) ; % 3 x m * m x 1
+% fprintf('Size Of Grad:  %f\n', size(grad));
 % =============================================================
 
 end

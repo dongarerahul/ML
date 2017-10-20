@@ -17,11 +17,23 @@ grad = zeros(size(theta));
 %               Compute the partial derivatives and set grad to the partial
 %               derivatives of the cost w.r.t. each parameter in theta
 
+h = sigmoid(X * theta);
+JWithoutRegularizaionFactor = (-1/m) * sum((y' * log(h)) + ((1-y)' * log(1-h)))
 
+JPartial = sum(-y' * log(h) - (1-y') * log(1-h)) / m;
+JRegularization = (lambda/(2*m)) * sum(theta .^ 2);
+J1 = JPartial + JRegularization;
 
+gradPartial = (1/m) * (X' * (h - y));
+gradRegularized = (lambda/m) .* theta;
+grad1 = gradPartial + gradRegularized;
 
+J = (sum(-y' * log(h) - (1 - y')*log(1 - h)) / m) + lambda * sum(theta(2:end).^2) / (2*m);
+ 
+% theta = initial_theta
+% lambda .* [0; ones(length(theta)-1, 1)
+grad =((h - y)' * X / m)' + lambda .* theta .* [0; ones(length(theta)-1, 1)] ./ m ;
 
-
-% =============================================================
+% ======================================================
 
 end
